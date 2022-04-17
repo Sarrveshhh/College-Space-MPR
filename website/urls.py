@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('music/', include('music.urls', namespace='music')),
+    path('home/', include('music.urls', namespace='music')),
     path('admin/', admin.site.urls),
     path('login/', include('login.urls', namespace = 'login')),
-
+    path('dashboard/', include('register.urls', namespace = 'register')),
+    
 ]
 

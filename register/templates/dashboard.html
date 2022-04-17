@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +51,7 @@
                     <p class="lead">
                         Welcome to the dashboard, You can either write a message to your subscribers or look over the messages you've already sent.</p>
                 </div>
-                <img class="img-fluid" src="images/newsletter.svg" width="40%">
+                <img class="img-fluid" src="{% static 'images/newsletter.svg' %}" width="40%">
             </div>
         </div>
     </section>
