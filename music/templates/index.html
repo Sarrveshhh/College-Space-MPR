@@ -20,10 +20,10 @@
 
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
-                    
+                     
                         <li class="nav-item p-1">
-                            <a href="#carouselExampleIndicators" class="nav-link">
-                                Pictures from prior events
+                            <a href="#upcomingEvents" class="nav-link">
+                                Upcoming Events
                             </a>
                         </li>
 
@@ -34,8 +34,8 @@
                         </li>
 
                         <li class="nav-item p-1">
-                            <a href="#upcomingEvents" class="nav-link">
-                                Upcoming Events
+                            <a href="#carouselExampleIndicators" class="nav-link">
+                                Pictures from prior events
                             </a>
                         </li>
 
@@ -73,8 +73,11 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-        </nav> 
+            </div>     
+        </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+
 
         <!-- Showcase -->
         <section class="bg-dark text-light p-5 text-center">
@@ -90,7 +93,6 @@
                 </div>
             </div>
         </section>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
         <!-- Thank You modal -->
         <div class="modal fade" id="Thanks-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,37 +114,28 @@
                 </div>
             </div>
         </div>
-
-        <!-- Carousel -->
         
-        <div id="carouselExampleIndicators" class="carousel slide bg-primary p-5" data-bs-ride="carousel">
-            <h2 class="text-center text-light">Pictures from prior events</h2>
-            <br>
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="{% static 'images/event1.jpg' %}" class="d-block mx-auto bg-dark" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="images/event2.jpg" class="d-block mx-auto bg-dark" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="images/event3.jpg" class="d-block mx-auto bg-dark" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+        
+            <section class="p-4 bg-primary" id="upcomingEvents">
+                <div class="container-fluid text-center content-row">
+                    <h2 class="text-center text-light">Upcoming Events</h2>
+                    <br>
+                    <div class="row g-4 row-lg-3">
+                        {% for event in event_list %}
+                            <div class="col-md-6 col-lg-4 col-sm-8">
+                                <div class="card mx-auto" style="width: 18rem;">
+                                    <div class="card-body">
+                                    <h5 class="card-title">Event Name</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                                    <p class="card-text">(Description) Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+        
 
         <!-- Subscription Boxes -->
         <section class="p-5 bg-dark" id="subscriptionBoxes">
@@ -595,28 +588,38 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <h6 class="text-center text-light">Crafted with ❤️ for TSEC</h6>
         </section>
 
-        <!-- Upcoming Events -->
-        <section class="p-5 bg-primary" id="upcomingEvents">
-            <div class="container-fluid content-row">
-                <h2 class="text-center text-light">Upcoming Events</h2>
-                <br>
-                {% for event in event_list %}
-                <div class="row g-4 row-lg-3">
-                    <div class="col-md-6 col-lg-4 col-sm-8">
-                        <div class="card" style="width: 18rem;">
-                            <div class="card-body">
-                              <h5 class="card-title">{{ event.event_name }}</h5>
-                              <h6 class="card-subtitle mb-2 text-muted">{{ event.date }}</h6>
-                              <p class="card-text">{{ event.description }}</p>
-                            </div>
-                          </div>                
-                    </div>
-                {% endfor %}
-        </section>
+        <!-- Carousel -->
+        
+        <div id="carouselExampleIndicators" class="carousel slide bg-primary p-5" data-bs-ride="carousel">
+            <h2 class="text-center text-light">Pictures from prior events</h2>
+            <br>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'images/event1.jpg' %}" class="d-block mx-auto bg-dark" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/event2.jpg' %}" class="d-block mx-auto bg-dark" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/event3.jpg' %}" class="d-block mx-auto bg-dark" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
         <section class="bg-dark text-light p-5" id="contactUs">
             <h2 class="text-center">Contact Us</h2>
@@ -674,7 +677,9 @@
                     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>  
                 </div>
             </div>
+            <br>
+            <h6 class="text-center text-light">Crafted with ❤️ for TSEC</h6>
         </section>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
     </body>
 </html>

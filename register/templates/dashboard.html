@@ -20,12 +20,7 @@
 
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item p-1">
-                        <a href="mailto:collegespacesupport@gmail.com" class="nav-link">
-                            Contact Us
-                        </a>
-                    </li>
-
+                    
                     <li class="nav-item p-1">
                         <a href="#mailInput" class="nav-link">
                             Write a mail to your subscribers
@@ -33,8 +28,24 @@
                     </li>
 
                     <li class="nav-item p-1">
-                        <a href="#" class="nav-link">
+                        <a href="#previousEvents" class="nav-link">
                             Take a peek at the emails you've already sent
+                        </a>
+                    </li>
+
+                    <li class="nav-item p-1">
+                        <a href="#contactUs" class="nav-link">
+                            Contact Us
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item p-1">
+                        <a class="nav-link">|</a>
+                    </li>
+
+                    <li class="nav-item p-1">
+                        <a href="#contactUs" class="nav-link">
+                            Log Out
                         </a>
                     </li>
                 </ul>
@@ -56,51 +67,136 @@
         </div>
     </section>
 
-    <section id="mailInput" class="text-center">
-        <div class="container-lg p-5">
-            <div class="text-center text-light">
-                <h2>
-                    Write a mail
-                    <p class="lead">
-                        Note: Please don't send bogus emails. Also, refrain from using inappropriate language.
-                    </p>
-                </h2>
-            </div>
-        </div>
-        <div class="row justify-content-center my-2">
-            <div class="col-lg-10 col-md-6 col-sm-4">
-                <form class="text-center text-light">
-                    <div class="row mb-3">
-                        <label for="eventName" class="col-sm-2 col-form-label">Event Name</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control col-form" id="eventName" placeholder="e.g. Event Name">
-                        </div>
+    <section id="mailInput" class="bg-primary text-light p-5">
+        <h2 class="text-center">Write an email to your subscribers</h2>
+        <p class="text-danger text-center">Note: Please don't send bogus emails. Also, refrain from using inappropriate language.</p>
+        <div class="d-sm-flex">
+            <div class="container py-4">
+                <form id="emailForm">
+                    <div class="mb-3">
+                        <label for="eventName" class="form-label">Event Name</label>
+                        <input type="text" class="form-control" id="eventName">
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="eventDate" class="col-sm-2 col-form-label">Event Date</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" id="eventDate">
-                        </div>
-                    </div>
-                    
-                    <div class="row mb-3">
-                        <label for="eventTime" class="col-sm-2 col-form-label">Event Time</label>
-                        <div class="col-sm-10">
-                            <input type="time" class="form-control" id="eventTime">
-                        </div>
+                    <div class="mb-3">
+                        <label for="eventDate" class="form-label">Event Date</label>
+                        <input type="date" class="form-control" id="eventDate">
                     </div>
 
-                    <div class="row mb-3">
-                        <label for="description" class="col-sm-2 col-form-label">Event Description</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" id="description" rows="10"></textarea>
-                        </div>
+                    <div class="mb-3">
+                        <label for="eventTime" class="form-label">Event Time</label>
+                        <input type="time" class="form-control" id="eventTime">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="eventDescription" class="form-label">Event Description</label>
+                        <textarea class="form-control" id="eventDescription" rows="10"></textarea>
+                    </div>
+
+                    <div class="d-grid">
+                        <button class="btn btn-secondary btn-lg" id="submitButton" type="submit">Submit</button>
                     </div>
                 </form>
-                <input class="btn btn-secondary w-50" type="submit" value="SEND">
             </div>
         </div>
+    </section>
+
+    <section class="p-4 bg-dark" id="previousEvents">
+        <div class="container-fluid text-center content-row">
+            <h2 class="text-center text-light">Previous Events</h2>
+            <br>
+            <div class="row g-4 row-lg-3">
+                <div class="col-md-6 col-lg-4 col-sm-8">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Event Name</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                          <p class="card-text">(Description) Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-sm-8">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Event Name</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                          <p class="card-text">(Description) Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-sm-8">
+                    <div class="card mx-auto" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Event Name</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Date</h6>
+                          <p class="card-text">(Description) Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary text-light p-5" id="contactUs">
+        <h2 class="text-center">Contact Us</h2>
+        <div class="container">
+            <div class="d-sm-flex">
+                <img class="img-fluid" src="{% static 'images/contactUs.svg' %}" width="50%">
+
+                <!-- Wrapper container -->
+                <div class="container py-4 bg-primary text-light">
+
+                    <!-- Bootstrap 5 starter form -->
+                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                
+                    <!-- Name input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Name</label>
+                        <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+                    </div>
+                
+                    <!-- Email address input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="emailAddress">Email Address</label>
+                        <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+                        <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                    </div>
+                
+                    <!-- Message input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+                    </div>
+                
+                    <!-- Form submissions success message -->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">Form submission successful!</div>
+                    </div>
+                
+                    <!-- Form submissions error message -->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                
+                    <!-- Form submit button -->
+                    <div class="d-grid">
+                        <button class="btn btn-secondary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+                    </div>
+                
+                    </form>
+                
+                </div>
+                <!-- SB Forms JS -->
+                <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>  
+            </div>
+        </div>
+        <br>
+        <h6 class="text-center text-light">Crafted with ❤️ for TSEC</h6>
     </section>
 </body>
 </html>
