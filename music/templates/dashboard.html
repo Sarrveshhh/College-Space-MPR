@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 {% load static %}
 <head>
@@ -9,7 +9,7 @@
     <title>Dashboard</title>
 </head>
 <body class="bg-primary">
-    <!-- Navbar -->
+     Navbar 
     <nav class="navbar navbar-expand-lg py-3 bg-dark navbar-dark">
         <div class="container">
             <a href="#" class="navbar-brand"><h3><b>College Space</b></h3></a>
@@ -145,20 +145,20 @@
             <div class="d-sm-flex">
                 <img class="img-fluid" src="{% static 'images/contactUs.svg' %}" width="50%">
 
-                <!-- Wrapper container -->
+                <!-- Wrapper container
                 <div class="container py-4 bg-primary text-light">
 
-                    <!-- Bootstrap 5 starter form -->
+                    <!-- Bootstrap 5 starter form
                     <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                 
-                    <!-- Name input -->
+                    <!-- Name input 
                     <div class="mb-3">
                         <label class="form-label" for="name">Name</label>
                         <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
                         <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
                     </div>
                 
-                    <!-- Email address input -->
+                    <!-- Email address input 
                     <div class="mb-3">
                         <label class="form-label" for="emailAddress">Email Address</label>
                         <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
@@ -166,32 +166,35 @@
                         <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
                     </div>
                 
-                    <!-- Message input -->
+                    <!-- Message input 
                     <div class="mb-3">
                         <label class="form-label" for="message">Message</label>
                         <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
                         <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
                     </div>
                 
-                    <!-- Form submissions success message -->
+                    <!-- Form submissions success message 
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center mb-3">Form submission successful!</div>
                     </div>
                 
-                    <!-- Form submissions error message -->
+                    <!-- Form submissions error message 
                     <div class="d-none" id="submitErrorMessage">
                         <div class="text-center text-danger mb-3">Error sending message!</div>
                     </div>
                 
-                    <!-- Form submit button -->
+                    <!-- Form submit button 
                     <div class="d-grid">
+                        <form action="" method=POST>
+                            {% csrf_token %}
+
                         <button class="btn btn-secondary btn-lg disabled" id="submitButton" type="submit">Submit</button>
                     </div>
                 
-                    </form>
+                        </form>
                 
                 </div>
-                <!-- SB Forms JS -->
+                <!-- SB Forms JS 
                 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>  
             </div>
         </div>
@@ -199,4 +202,20 @@
         <h6 class="text-center text-light">Crafted with ❤️ for TSEC</h6>
     </section>
 </body>
-</html>
+</html>-->
+
+<center>
+    <h1>Add Event to Database</h1>
+    <br></br>
+    {% if submitted%}
+        Your Event was submitted successfully!!!
+
+    {% else %}
+        <form action="" method=POST>
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+</center>

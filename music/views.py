@@ -5,9 +5,8 @@ from django.core.mail import send_mail
 from music.forms import SubscribeForm
 from django.conf import settings
 from django.contrib import messages
-
-
-# Create your views here.
+from .forms import EventForm
+from django.http import HttpResponseRedirect
 
 def index(request):
 	if request.method == "POST":
@@ -23,4 +22,23 @@ def index(request):
 
 	event_list = Event.objects.all()
 	return render(request, 'index.html', {'event_list' : event_list})
+
+def dashboard(request):
+	submitted = False
+	if request.method == "POST":
+		form = EventForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/dashboard?submitted=True')
+
+	else:
+		form = EventForm
+		if 'submitted' in request.GET:
+			submitted = True
+	form = EventForm
+	return render(request, 'dashboard.html', {'form':form, 'submitted':submitted})
+
+
+
+
 

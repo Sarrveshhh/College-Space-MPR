@@ -20,7 +20,7 @@ urlpatterns = [
     path('', include('music.urls', namespace='music')),
     path('admin/', admin.site.urls),
     path('login/', include('login.urls', namespace = 'login')),
-    path('dashboard/', include('register.urls', namespace = 'register')),
+    path('login/', include('music.urls', namespace = 'register')),
     
 ]
 

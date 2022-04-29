@@ -5,5 +5,5 @@ app_name = 'music'
 
 urlpatterns = [
 	path('', views.index, name='index'),
+	path('dashboard/', views.dashboard, name='register'),
 ]
-

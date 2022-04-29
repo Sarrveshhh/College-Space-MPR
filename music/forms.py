@@ -6,8 +6,10 @@ from .models import Event
 class EventForm(ModelForm):
 	class Meta:
 		model = Event
-		fields = ('club', 'event_name', 'date', 'venue', 'description')
+		fields = ('event_name', 'date', 'venue', 'description')
 
 # Creating a Email Form
 class SubscribeForm(forms.Form):
 	email = forms.EmailField()
+
+
